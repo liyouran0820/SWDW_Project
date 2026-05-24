@@ -11,9 +11,13 @@
 - 用户注册
 - 用户登录
 - 用户退出登录
+- 管理员登陆
 - 显示当前登录状态
+- 管理员查看购买总数
+- 管理员查看各用户购买数量
 - 商品展示
 - 商品购买
+- 用户查看已购买物品以及总价
 - 购买后更新数据库中的商品数量
 - 基本网页导航功能
 
@@ -37,9 +41,22 @@ Project/
 ├── one.php
 ├── neces.php
 ├── orna.php
+├── total.php
+├── person.php
+├── purchase.php
 ├── Images/
-│   ├── clothes.png
-│   ├── calendar.png
-│   ├── fan.png
-│   └── ...
+│   ├── clothes
+│        ├──ancientShirt.png
+│        └──...
+│   ├── neces
+│        ├──calendar.png
+│        └──...
+│   ├── orna
+│        ├──brooch.png
+│        └──...
 └── README.md
+```
+
+## 访问方式
+
+可以直接通过 [www.ustitest.com/project/login.php](https://www.ustitest.com/project/login.php) 访问
