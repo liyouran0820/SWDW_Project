@@ -98,6 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <li><a href="clothes.php">Clothes</a></li>
                 <li><a href="neces.php">Necessities</a></li>
                 <li><a href="orna.php">Ornaments</a></li>
+                <li><a href="purchase_list.php">My Purchase</a></li>
                 <li id="loginStatus">
                     <?php
                     if (isset($_SESSION["username"])) {
