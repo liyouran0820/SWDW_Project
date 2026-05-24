@@ -8,7 +8,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Login
     if (isset($_POST["loginSubmit"])) {
-
         $username = $_POST["loginUsername"];
         $password = $_POST["loginPassword"];
         if (isset($_POST["administrator"])) {
