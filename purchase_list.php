@@ -19,7 +19,8 @@ $message = "";
             box-sizing: border-box;
         }
 
-        #purchaseTable {
+        #purchaseTable,
+        #totalPriceTable {
             width: 100%;
             border-collapse: collapse;
             background-color: white;
@@ -28,14 +29,21 @@ $message = "";
         }
 
         #purchaseTable th,
-        #purchaseTable td {
+        #purchaseTable td,
+        #totalPriceTable th,
+        #totalPriceTable td {
             border: 2px solid black;
             padding: 10px;
             text-align: center;
         }
 
-        #purchaseTable th {
+        #purchaseTable th,
+        #totalPriceTable th {
             background-color: lightblue;
+        }
+
+        #totalPriceTable {
+            margin-top: 20px;
         }
 
         .purchaseMessage {
@@ -56,7 +64,7 @@ $message = "";
 
     <div>
         <nav>
-            <h1 id="pageTitle">我的购买</h1>
+            <h1 id="pageTitle">My Purchase</h1>
             <ul>
                 <li><a href="login.php">Login/Register</a></li>
                 <li><a href="clothes.php">Clothes</a></li>
@@ -87,6 +95,22 @@ $message = "";
                     echo "<table id='purchaseTable'>";
 
                     $row = $result->fetch_assoc();
+                    $prices = array(
+                        "ancientShirt" => 100,
+                        "cap" => 20,
+                        "cultureShirt" => 50,
+                        "poloShirt" => 60,
+                        "calendar" => 20,
+                        "fan" => 30,
+                        "mugs" => 40,
+                        "umbrella" => 30,
+                        "brooch" => 40,
+                        "crystal" => 40,
+                        "earRings" => 60,
+                        "necklace" => 60
+                    );
+                    $totalPrice = 0;
+
                     echo "<tr>";
                     foreach ($row as $key => $value) {
                         if ($key !== 'password') {
@@ -100,9 +124,17 @@ $message = "";
                         if ($key !== 'password') {
                             echo "<td>" . htmlspecialchars($value) . "</td>";
                         }
+                        if (isset($prices[$key])) {
+                            $totalPrice += $value * $prices[$key];
+                        }
                     }
                     echo "</tr>";
 
+                    echo "</table>";
+
+                    echo "<table id='totalPriceTable'>";
+                    echo "<tr><th>Total Price</th></tr>";
+                    echo "<tr><td>" . htmlspecialchars($totalPrice) . "</td></tr>";
                     echo "</table>";
                 } else {
                     echo "<p class='purchaseMessage'>No purchase records found.</p>";
