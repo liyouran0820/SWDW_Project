@@ -59,4 +59,4 @@ Project/
 
 ## 访问方式
 
-可以直接通过 [https://www.ustitest.com/project/login.php](https://www.ustitest.com/project/login.php) 访问
+可以直接通过 [http://www.ustitest.com/project/login.php](http://www.ustitest.com/project/login.php) 进行访问
