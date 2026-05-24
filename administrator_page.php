@@ -25,8 +25,13 @@ $message = "";
         <nav>
             <h1 id="pageTitle">Administrator Page</h1>
             <ul>
-                <li><a href="login.php">Show total purchase</a></li>
-                <li><a href="clothes.php">Show personal purchase</a></li>
+                <li><a href="login.php">Login/Register</a></li>
+                <li><a href="clothes.php">Clothes</a></li>
+                <li><a href="neces.php">Necessities</a></li>
+                <li><a href="orna.php">Ornaments</a></li>
+                <li><a href="administrator_page.php">Administrator Page</a></li>
+                <li><a href="total.php">Show total purchase</a></li>
+                <li><a href="personal.php">Show personal purchase</a></li>
                 <li id="loginStatus">
                     <?php
                     if (isset($_SESSION["username"])) {
