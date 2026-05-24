@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST["administrator"])) {
             echo "<script>
         alert('Administrator login successfully.');
-        window.location.href='clothes.php';
+        window.location.href='neces.php';
         </script>";
         } else {
             $sql = "SELECT * FROM members 
