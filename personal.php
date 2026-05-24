@@ -68,7 +68,7 @@ $message = "";
 
                 echo "</table>";
             } else {
-                echo "Please login first.";
+                echo "Please Login first.";
             }
             ?>
         </div>
