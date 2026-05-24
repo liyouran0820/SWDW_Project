@@ -11,8 +11,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $username = $_POST["loginUsername"];
         $password = $_POST["loginPassword"];
-        if (1) {
-            echo "hello";
+        if (isset($_POST["administrator"])) {
+            echo "<script>
+        alert('Logout successfully.');
+        window.location.href='clothes.php';
+        </script>";
         } else {
             $sql = "SELECT * FROM members 
                 WHERE username = '$username' AND password = '$password'";
