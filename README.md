@@ -45,13 +45,13 @@ Project/
 ├── person.php
 ├── purchase.php
 ├── Images/
-│   ├── clothes
+│   └─ clothes
 │        ├──ancientShirt.png
 │        └──...
-│   ├── neces
+│   └── neces
 │        ├──calendar.png
 │        └──...
-│   ├── orna
+│   └── orna
 │        ├──brooch.png
 │        └──...
 └── README.md
@@ -59,4 +59,4 @@ Project/
 
 ## 访问方式
 
-可以直接通过 [www.ustitest.com/project/login.php](https://www.ustitest.com/project/login.php) 访问
+可以直接通过 [www.ustitest.com/project/login.php](www.ustitest.com/project/login.php) 访问
