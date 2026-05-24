@@ -11,10 +11,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $username = $_POST["loginUsername"];
         $password = $_POST["loginPassword"];
         if (isset($_POST["administrator"])) {
-            echo "<script>
-        alert('Administrator login successfully.');
-        window.location.href='neces.php';
-        </script>";
+            $sql = "SELECT * FROM administrator 
+                WHERE username = '$username' AND password = '$password'";
+
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                $_SESSION["username"] = $username;
+                $message = "Administrator Login Successfully.";
+            } else {
+                $message = "Incorrect username or password.";
+            }
         } else {
             $sql = "SELECT * FROM members 
                 WHERE username = '$username' AND password = '$password'";
@@ -23,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if ($result->num_rows > 0) {
                 $_SESSION["username"] = $username;
-                $message = "Login successfully.";
+                $message = "Login Successfully.";
             } else {
                 $message = "Incorrect username or password.";
             }
