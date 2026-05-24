@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION["username"] = $username;
                 echo "<script>
                 alert('Administrator Login Successfully.');
-                window.location.href='administrator_page.php';
+                window.location.href='total.php';
                 </script>";
             } else {
                 $message = "Incorrect username or password.";

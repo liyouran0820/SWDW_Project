@@ -25,7 +25,6 @@ $message = "";
         <nav>
             <h1 id="pageTitle">Show personal purchase</h1>
             <ul>
-                <li><a href="administrator_page.php">Administrator Page</a></li>
                 <li><a href="total.php">Show total purchase</a></li>
                 <li><a href="personal.php">Show personal purchase</a></li>
                 <li id="loginStatus">
