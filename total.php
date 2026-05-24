@@ -9,7 +9,7 @@ $message = "";
 <html>
 
 <head>
-    <title>Clothes</title>
+    <title>Total Purchase</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -23,10 +23,11 @@ $message = "";
 
     <div>
         <nav>
-            <h1 id="pageTitle">Administrator Page</h1>
+            <h1 id="pageTitle">Show total purchase</h1>
             <ul>
-                <li><a href="login.php">Show total purchase</a></li>
-                <li><a href="clothes.php">Show personal purchase</a></li>
+                <li><a href="administrator_page.php">Administrator Page</a></li>
+                <li><a href="total.php">Show total purchase</a></li>
+                <li><a href="personal.php">Show personal purchase</a></li>
                 <li id="loginStatus">
                     <?php
                     if (isset($_SESSION["username"])) {
