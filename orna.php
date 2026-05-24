@@ -20,20 +20,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $necklace = $_POST["necklace"];
 
         $sql1 = "UPDATE purchase 
-                 SET quantity = quantity + $brooch 
-                 WHERE itemN = 'brooch'";
+                SET quantity = quantity + $brooch 
+                WHERE itemN = 'brooch'";
 
         $sql2 = "UPDATE purchase 
-                 SET quantity = quantity + $crystal 
-                 WHERE itemN = 'crystal'";
+                SET quantity = quantity + $crystal 
+                WHERE itemN = 'crystal'";
 
         $sql3 = "UPDATE purchase 
-                 SET quantity = quantity + $ear_rings 
-                 WHERE itemN = 'earRings'";
+                SET quantity = quantity + $ear_rings 
+                WHERE itemN = 'earRings'";
 
         $sql4 = "UPDATE purchase 
-                 SET quantity = quantity + $necklace 
-                 WHERE itemN = 'necklace'";
+                SET quantity = quantity + $necklace 
+                WHERE itemN = 'necklace'";
 
         if (
             $conn->query($sql1) === TRUE &&

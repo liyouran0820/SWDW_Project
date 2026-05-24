@@ -38,9 +38,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
 
             $checkUsername = "SELECT * FROM members 
-                      WHERE username = '$username'";
+                    WHERE username = '$username'";
             $checkPhone = "SELECT * FROM members 
-                      WHERE phone = '$phone'";
+                    WHERE phone = '$phone'";
 
             $checkResultUsername = $conn->query($checkUsername);
             $checkResultPhone = $conn->query($checkPhone);
