@@ -47,31 +47,26 @@ $message = "";
                 $username = $_SESSION["username"];
                 $sql = "SELECT * FROM members WHERE username = '$username'";
                 $result = $conn->query($sql);
+                $row = $result->fetch_assoc();
+                echo "<table id='imgTable' border='1'>";
 
-                if ($result->num_rows > 0) {
-                    $row = $result->fetch_assoc();
-                    echo "<table id='imgTable' border='1'>";
-
-                    echo "<tr>";
-                    foreach ($row as $key => $value) {
-                        if ($key !== 'password') {
-                            echo "<th>" . htmlspecialchars($key) . "</th>";
-                        }
+                echo "<tr>";
+                foreach ($row as $key => $value) {
+                    if ($key !== 'password') {
+                        echo "<th>" . htmlspecialchars($key) . "</th>";
                     }
-                    echo "</tr>";
-
-                    echo "<tr>";
-                    foreach ($row as $key => $value) {
-                        if ($key !== 'password') {
-                            echo "<td>" . htmlspecialchars($value) . "</td>";
-                        }
-                    }
-                    echo "</tr>";
-
-                    echo "</table>";
-                } else {
-                    echo "No user data found.";
                 }
+                echo "</tr>";
+
+                echo "<tr>";
+                foreach ($row as $key => $value) {
+                    if ($key !== 'password') {
+                        echo "<td>" . htmlspecialchars($value) . "</td>";
+                    }
+                }
+                echo "</tr>";
+
+                echo "</table>";
             } else {
                 echo "Please login first.";
             }
