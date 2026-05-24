@@ -66,8 +66,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } else if ($checkResultPhone->num_rows > 0) {
                 $message = "Phone already exists.";
             } else {
-                $sql = "INSERT INTO members (username, password, phone)
-                        VALUES ('$username', '$password', '$phone')";
+                $sql = "INSERT INTO members (username, password, phone, ancientShirt, cap, cultureShirt, poloShirt, calendar, fan, mugs, umbrella, brooch, crystal, earRings, necklace)
+                        VALUES ('$username', '$password', '$phone', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)";
 
                 if ($conn->query($sql) === TRUE) {
                     $message = "Register successfully.";

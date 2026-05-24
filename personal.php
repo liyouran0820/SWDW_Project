@@ -42,6 +42,40 @@ $message = "";
         </nav>
 
         <div id="outline">
+            <?php
+            if (isset($_SESSION["username"])) {
+                $username = $_SESSION["username"];
+                $sql = "SELECT * FROM members WHERE username = '$username'";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    $row = $result->fetch_assoc();
+                    echo "<table id='imgTable' border='1'>";
+
+                    echo "<tr>";
+                    foreach ($row as $key => $value) {
+                        if ($key !== 'password') {
+                            echo "<th>" . htmlspecialchars($key) . "</th>";
+                        }
+                    }
+                    echo "</tr>";
+
+                    echo "<tr>";
+                    foreach ($row as $key => $value) {
+                        if ($key !== 'password') {
+                            echo "<td>" . htmlspecialchars($value) . "</td>";
+                        }
+                    }
+                    echo "</tr>";
+
+                    echo "</table>";
+                } else {
+                    echo "No user data found.";
+                }
+            } else {
+                echo "Please login first.";
+            }
+            ?>
         </div>
     </div>
 
