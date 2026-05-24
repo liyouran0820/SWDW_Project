@@ -17,7 +17,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 $_SESSION["username"] = $username;
-                $message = "Administrator Login Successfully.";
+                echo "<script>
+                alert('Administrator Login Successfully.');
+                window.location.href='administrator_page.php';
+                </script>";
             } else {
                 $message = "Incorrect username or password.";
             }
