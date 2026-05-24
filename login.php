@@ -11,7 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $username = $_POST["loginUsername"];
         $password = $_POST["loginPassword"];
-
         if (isset($_POST["administrator"])) {
             echo "<script>
         alert('Administrator login successfully.');
