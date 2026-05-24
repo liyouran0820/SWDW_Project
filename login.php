@@ -94,7 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <nav>
             <h1 id="pageTitle">Login</h1>
             <ul>
-                <li><a href="login.php">Login/Register</a></li>
+                //<li><a href="login.php">Login/Register</a></li>
                 <li><a href="clothes.php">Clothes</a></li>
                 <li><a href="neces.php">Necessities</a></li>
                 <li><a href="orna.php">Ornaments</a></li>
