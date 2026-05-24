@@ -11,9 +11,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $username = $_POST["loginUsername"];
         $password = $_POST["loginPassword"];
+
         if (isset($_POST["administrator"])) {
             echo "<script>
-        alert('Logout successfully.');
+        alert('Administrator login successfully.');
         window.location.href='clothes.php';
         </script>";
         } else {
@@ -21,14 +22,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 WHERE username = '$username' AND password = '$password'";
 
             $result = $conn->query($sql);
-        }
 
-
-        if ($result->num_rows > 0) {
-            $_SESSION["username"] = $username;
-            $message = "Login successfully.";
-        } else {
-            $message = "Incorrect username or password.";
+            if ($result->num_rows > 0) {
+                $_SESSION["username"] = $username;
+                $message = "Login successfully.";
+            } else {
+                $message = "Incorrect username or password.";
+            }
         }
     }
 
