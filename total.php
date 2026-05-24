@@ -49,7 +49,6 @@ $message = "";
             if ($result->num_rows > 0) {
                 echo "<table id='imgTable' border='1'>";
 
-                // 显示列标题
                 $row = $result->fetch_assoc();
                 echo "<tr>";
                 foreach ($row as $key => $value) {
@@ -57,14 +56,12 @@ $message = "";
                 }
                 echo "</tr>";
 
-                // 显示第一行数据
                 echo "<tr>";
                 foreach ($row as $value) {
                     echo "<td>" . htmlspecialchars($value) . "</td>";
                 }
                 echo "</tr>";
 
-                // 显示剩余行数据
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>";
                     foreach ($row as $value) {

@@ -43,13 +43,13 @@ $message = "";
 
         <div id="outline">
             <?php
-            if (isset($_SESSION["username"])) {
-                $username = $_SESSION["username"];
-                $sql = "SELECT * FROM members WHERE username = '$username'";
-                $result = $conn->query($sql);
-                $row = $result->fetch_assoc();
+            $sql = "SELECT * FROM members";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
                 echo "<table id='imgTable' border='1'>";
 
+                $row = $result->fetch_assoc();
                 echo "<tr>";
                 foreach ($row as $key => $value) {
                     if ($key !== 'password') {
@@ -66,9 +66,19 @@ $message = "";
                 }
                 echo "</tr>";
 
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    foreach ($row as $key => $value) {
+                        if ($key !== 'password') {
+                            echo "<td>" . htmlspecialchars($value) . "</td>";
+                        }
+                    }
+                    echo "</tr>";
+                }
+
                 echo "</table>";
             } else {
-                echo "Please login first.";
+                echo "No member records found.";
             }
             ?>
         </div>
