@@ -124,8 +124,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     Password:<br>
                     <input class="inputbox" type="password" name="loginPassword" placeholder="Password" required><br><br>
-                    <input type="radio" name="administrator" value="administrator">I am the administrator<br><br>
+                    <input type="checkbok" name="administrator" value="administrator">I am the administrator<br><br>
                     <button class="button" type="submit" name="loginSubmit">Submit</button>
+                    <button class="button" type="reset">Reset</button>
                 </form>
             </div>
 
