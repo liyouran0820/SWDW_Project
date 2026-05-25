@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["loginSubmit"])) {
         $username = $_POST["loginUsername"];
         $password = $_POST["loginPassword"];
-        if (isset($_POST["administrator"])) {
+        if (isset($_POST["administrator"]) && $_POST["administrator"] == "administrator") {
             $sql = "SELECT * FROM administrator 
                 WHERE username = '$username' AND password = '$password'";
 
@@ -124,7 +124,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     Password:<br>
                     <input class="inputbox" type="password" name="loginPassword" placeholder="Password" required><br><br>
-                    <input type="checkbok" name="administrator" value="administrator">I am the administrator<br><br>
+                    Role:<br>
+                    <select class="radio" name="administrator">
+                        <option value="">Member</option>
+                        <option value="administrator">Administrator</option>
+                    </select><br><br>
                     <button class="button" type="submit" name="loginSubmit">Submit</button>
                     <button class="button" type="reset">Reset</button>
                 </form>
