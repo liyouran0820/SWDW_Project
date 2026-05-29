@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 18, 2025 at 08:02 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.28
+-- 主机： localhost
+-- 生成日期： 2026-05-29 19:25:55
+-- 服务器版本： 5.7.40-log
+-- PHP 版本： 8.2.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `jeffersonfong`
+-- 数据库： `project`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `members`
+-- 表的结构 `administrator`
 --
 
 CREATE TABLE `administrator` (
@@ -35,31 +35,11 @@ CREATE TABLE `administrator` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `members`
+-- 转存表中的数据 `administrator`
 --
 
-INSERT INTO `members` (`mid`, `username`, `password`, `phone`) VALUES
-(1, 'youran', '1111', '12345');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `members`
---
-ALTER TABLE `members`
-  ADD PRIMARY KEY (`mid`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `members`
---
-ALTER TABLE `members`
-  MODIFY `mid` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+INSERT INTO `administrator` (`mid`, `username`, `password`, `phone`) VALUES
+(1, 'youran', '1111', '1234');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
